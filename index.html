@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+  padding: 0;
+  margin: 0;
+  background-image: url( https://wallpaperaccess.com/full/187161.jpg );
+}
+h1{
+    color: rgb(27, 27, 26);
+}
+div {
+  text-align: center;
+  font-family: sans-serif;
+  width: 50rem;
+  height: 500px;
+  margin-left: 280px;
+  margin-top: 100px;
+  padding: 20px;
+  box-shadow: 6px 11px 6px 11px #efd1f5;
+  border-radius: 10px;
+}
+button {
+  border: none;
+  background-color: rgb(127, 127, 155);
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+}
+#reset {
+  border: none;
+  background-color: rgb(127, 127, 155);
+  padding: 10px;
+  color: black;
+  font-weight: bolder;
+}
+button:hover {
+  background-color: rgb(211, 62, 62);
+}
+#reset:hover {
+  background-color: rgb(255, 184, 184);
+}
+
+.input {
+  color: rgb(0, 0, 0);
+  height: 30px;
+  border: 3px solid rgb(210, 196, 241);
+  width: 400px;
+  border-radius: 15px;
+}
+    </style>
+   
+</head>
+<body>
+
+    <div>
+        <h1>Registration Form</h1>
+  <form>
+    <input class = "input" type="text" minlength="10" maxlength="10" placeholder="Enter your Name" required/><br><br>
+    <input class = "input" type="email" placeholder="Enter your email" pattern=".+@gmail.com" required/>
+        <br>
+        <br>
+        <input class = "input"id="p1" type="password" minlength="10" maxlength="10" placeholder="Password" value="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])" title="Password must contain one Uppercase, one lowercase, one special character and must
+        be of length at least 10" required/><br><br>
+        <input class = "input"id="p2" type="password" minlength="10" maxlength="10" placeholder="Confirm Password" value="" required/><br><br>
+            <button id="btn" onclick="submitwork()">Submit</button>
+    <input type="reset" id="reset"/>
+  </form>
+</div>
+    <script>
+        var k1 = document.getElementById("p1");
+      var p2 = document.getElementById("p2");
+      var btn_ref = document.getElementById("btn");
+      function submitwork(){
+        if(k1.value == p2.value)
+        {
+          btn_ref.disabled = false;  
+          k1.style.border = "3px solid green";
+          p2.style.border = "3px solid green";
+          console.log(k1.value);
+        }
+        else{
+          btn_ref.disabled = true;  
+          k1.style.border = "3px solid red";
+          p2.style.border = "3px solid red";
+         
+        }
+      }
+    </script>
+</body>
+</html>
